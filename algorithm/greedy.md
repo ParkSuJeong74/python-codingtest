@@ -96,3 +96,34 @@ greedy_3_3()
 ```
 
 ### 1이 될 때까지
+
+N이 1이 될 때까지 두 과정 중 하나를 반복적으로 수행한다.
+
+1. N에서 1을 뺀다.
+2. N을 K로 나눈다. 단 나누어 떨어질때만 선택한다.
+
+N을 1로 만드는 최소 횟수를 구한다.
+
+예시)
+25 5
+출력 : 2
+
+```python
+def greedy_3_4():
+    n, k = map(int, input().split())
+    count = 0
+
+    while True:
+        if(n == 1):
+            break
+        elif(n % k != 0):
+            n -= 1
+        else:
+            n //= k
+        count += 1
+    print(count)
+
+greedy_3_4()
+```
+
+
